@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var ex = 10 + '20';
+        console.log('ex: ' + ex); // string
+
+        var ex2 = 10 * '3';
+        console.log('ex2 : ' + ex2); 
+        // 문자*정수는 처리가 불가능해서 문자인 '3'이 암묵적 정수변환으로 문자가 정수로 변환 int
+
+        ex2 = 100 + '';
+        console.log('ex2 : ' + typeof ex2); // string
+
+        // 문자열 타입의 암묵적 숫자 변환
+        var ex3 = +'550';
+        console.log(ex3);
+        console.log('ex3 : ' + typeof ex3);
+
+        // 논리 타입을 암묵적 숫자 변환
+        ex3 = +'false'; // 동작안함
+        console.log(ex3);
+        ex3 = +false; // 동작함 값 0
+        console.log(ex3);
+
+
+        ex3 = +null;
+        console.log(ex3);
+
+        ex3 = +NaN;
+        console.log(ex3);
+
+
+
+    </script>
+
+</body>
+</html>

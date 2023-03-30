@@ -24,12 +24,12 @@
 
         // 일치비교에서는 NaN을 주의.
         // NaN은 자신과 일치하지 않는 유일한 값입니다.
-        console.log(NaN === NaN);
+        console.log(NaN === NaN); // false
 
         console.log('-----------------------------');
 
         // 문자열 비교
-        console.log('apple' === 'APPLE');
+        console.log('apple' === 'APPLE'); //소 대문자 false
         
         // 문자열의 대소 비교는 유니코드 문자번호 기준입니다.
         // 영어 대문자 < 영어 소문자 < 한글

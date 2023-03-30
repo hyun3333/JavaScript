@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var week = ['월', '화', '수', '목', '금', '토', '일'];
+
+        // 향상포문 for-of문 java에서 for-each문이랑 굉장히 유사하다.
+        // 배열의 값을 얻어낼때 주로 사용 (객체에서는 사용x)
+        for(var day of week) {
+            console.log(day + '요일 좋아~!');
+        }
+        
+        console.log('-----------------------------');
+        
+        // for-in문
+        // 배열이나 객체의 index 혹은 key값을 변수에 저장.
+        for(var day in week) {
+            console.log(day + '요일 좋아~!');
+        }
+    </script>
+    
+</body>
+</html>
