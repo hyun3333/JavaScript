@@ -52,39 +52,70 @@ checkNumber에서 정답, 오답 여부 및 up/down 여부를 판단해서 논�
 
         ////////////////////////함수 정의부///////////////////////////////
 
-        //사용자의 입력을 수행하는 함수
         function inputNumber() {
 
             //객체에서 min과 max의 값을 뽑아서 메세지를 완성.
             //객체 디스트럭쳐링으로 뽑아 보세요~
-            
-            
-            //사용자의 입력값을 객체에 추가
-            
-            //입력값 검증 함수를 호출.
-            return checkNumber();
-            
-        }
 
-        //사용자의 입력값을 검증하는 함수
-        function checkNumber(num) {
-            var num = +prompt(`${gameData.min} ~ ${gameData.max}`)
-            if(num === gameData[secret_num]) {
-                checkCountDown();
+            const {
+                min,
+                max,
+                secret_num,
+                count,
+                countdown
+            } = gameData;
+            console.log(gameData);
+            alert(min + " ~ " + max);
+            alert(gameData.secret_num);
+            //사용자의 입력값을 객체에 추가
+            const userNumber = +prompt(`${min}부터 ${max}까지의 숫자를 입력하세요 Up&Down 게임!!`)
+            if (userNumber < min || userNumber > max) {
+                alert(`숫자를 다시 입력해! ${min}부터 ${max}까지야`);
+                return;
             } else {
-                alertCountDown();
+                //입력값 검증 함수를 호출.
+                return checkNumber(userNumber);
             }
 
         }
 
+        //사용자의 입력값을 검증하는 함수
+        function checkNumber(userNumber) {
+            if (gameData.secret_num == userNumber) {
+                return checkCountDown();
+            } else {
+                return alertCountDown(userNumber);
+            }
+        }
+
         //사용자의 카운트다운을 체크하여 승리 여부를 알려주는 함수
-        function checkCountDown(countdown) {
+        function checkCountDown() {
+            gameData.count++;
+            alert(`${gameData.count}만에 맞췄습니다. 당신은 승리하였습니다`)
+            return true;
 
         }
 
 
         //사용자의 남은 카운트다운 횟수를 알려주는 함수
-        function alertCountDown(countdown) {
+        function alertCountDown(userNumber) {
+            if (gameData.countdown === 0) {
+                alert('당신은 패배하였습니다!');
+                return true;
+            } else if (userNumber > gameData.secret_num) {
+                alert(`Down! ${gameData.countdown}회 남았습니다`);
+                gameData.max = userNumber;
+                gameData.count++;
+                gameData.countdown--;
+            } else {
+                alert(`Up! ${gameData.countdown}회 남았습니다`);
+                gameData.min = userNumber;
+                gameData.count++;
+                gameData.countdown--;
+            }
+
+
+            return false;
 
         }
 
