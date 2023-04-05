@@ -34,7 +34,12 @@
         
         //3. id="list"인 요소의 마지막 위치에 새 요소 <li>list_6</li>
         //를 추가하세요.
-        $list.innerHTML += '<li>list_6</li>';
+        // $list.innerHTML += '<li>list_6</li>';
+
+        
+        const $li3 = document.querySelector('#list > li:nth-child(2)');
+        console.log($li3);
+        $li3.insertAdjacentHTML('afterend', '<li>list_6</li>');
         
         // const $li6 = document.createElement('li');
         // $li6.textContent = 'list_6';
@@ -69,6 +74,7 @@
 
         // [...$children].forEach($li => $list.removeChild($li));
         // $list.innerHTML = '';
+        
 
     </script>
     

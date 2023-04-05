@@ -16,12 +16,12 @@
 
         const $input = document.querySelector('input[type="text"]');
 
-        // input의 value 속성의 값을 얻고 싶다.
+        // input의 value 속성의 값을 가져온다.
         // const inputValue = $input.attributes.value.value;
         const inputValue = $input.getAttribute('value');
         console.log(inputValue);
 
-        // value 속성의 값을 변경
+        // value 속성의 값을 변경한다.
         // $input.attributes.value.value = '메롱';
         $input.setAttribute('value', '안녕하세요~!');
 
@@ -29,6 +29,7 @@
         const $paragraph = document.getElementById('text');
         $paragraph.setAttribute('title', '메롱');
 
+        // hasAttribute는 값을 true or false로 줘서 if문에 쓰기 용이하다
         console.log($input.hasAttribute('class'));
         console.log($paragraph.hasAttribute('merong'));
 
