@@ -24,7 +24,6 @@
 
     <script>
         const $checkBox = document.querySelectorAll('input[type="checkbox"]');
-        // const $value = document.querySelectorAll('value');
 
         for (let $check of $checkBox) {
             $check.addEventListener('input', e => {
@@ -49,23 +48,19 @@
     기억하기 <input type="checkbox" id="remember">
     <button id="check2">확인</button>
 
-    <!-- 공백검사
-    체크박스 검사
-    확인 눌렀을때  -->
-
+    <!-- 다중 스크립트는 권장되는 방법은 아니다 -->
     <script>
         
         const $inputId = document.querySelector('#id');
-        const $inputPw = document.querySelector('#remember');
+        const $inputRb = document.querySelector('#remember');
         const $btn = document.querySelector('#check2');
 
         $btn.addEventListener('click', e => {
             console.log($inputId.value);
             if ($inputId.value == '') {
-                alert('공백');
-            }
-            if (!$inputPw.checked) {
-                alert('안눌렀어');
+                alert('공백이야');
+            } else if (!$inputRb.checked) {
+                alert('기억하기 안눌렀어');
             }
         });
 

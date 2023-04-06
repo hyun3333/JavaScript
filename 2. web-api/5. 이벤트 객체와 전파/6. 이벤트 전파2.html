@@ -56,14 +56,18 @@
             // active 클래스를 클릭된 요소에 추가하고
             // 기존에 active를 가지고 있던 요소에 클래스를 삭제.
             for (let $li of $liList) {
-
+                
                 /*
                 toggle 메서드의 두번째 매개값으로 논리값을 전달할 수 있는데,
                 해당 논리값이 true로 판명나면 지정한 클래스를 추가하고,
                 false로 판명나면 지정한 클래스를 삭제합니다.
                 */
-
-                $li.classList.toggle('active', $li === e.target);
+               $li.classList.toggle('active', $li === e.target);
+            //    or
+            //    if($li.classList.contains('active')) {
+            //        $li.classList.remove('active');
+            //    }
+               
             }
 
             // 메세지 영역에 이벤트가 발생괸 과일 이름을 추가.
@@ -94,7 +98,7 @@
         // 입력창 안에서 엔터 키를 입력하면 버튼 클릭과 동일한 효과 내기
 
         $textBox.addEventListener('keydown', e => {
-            if(e.keyCode === 13) { // (e.keyCode === 'Enter')와 같다
+            if(e.keyCode === 13) { // (e.key === 'Enter')와 같다
                 // click()은 요소를 직접 클릭한 것과 같은 효과를 줌.
                 // 클릭 이벤트가 발생할 수 있도록 유도.
                 $btn.click();
