@@ -15,10 +15,6 @@
         a.dark {
             color: #fff;
         }
-        /* .light {
-            background: #fff;
-            color: #000;
-        } */
         .center {
             text-align: center;
         }
@@ -131,9 +127,18 @@
 
         // 이름보기 버튼
         const $btn2 = document.querySelector('#btn2');
-        const $p = document.querySelector('');
+        const $p = document.querySelector('p');
         $btn2.addEventListener('click', e => {
-            $p.innerHTML = '홍길동<br>20세<br>능력단위<br>Java, Oracle, Jsp, CSS, JavaScript';
+            $p.classList.toggle('change')
+            if ($p.classList.contains('change')) {
+                $btn2.textContent = '내용보기';
+                $p.innerHTML = '홍길동<br>20세<br>능력단위<br>Java, Oracle, Jsp, CSS, JavaScript';
+                $a.style.display = 'none';
+            } else {
+                $btn2.textContent = '이름보기';
+                $p.innerHTML = '자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.';
+                $a.style.display = 'block';
+            }
         })
 
 
@@ -143,8 +148,27 @@
         버튼 이름은 '사진 모드'로 지정해 주시면 됩니다.
         .left 안에 있는 .inner의 모든 자식 노드를 제거하고
         생성하신 요소를 추가해 주시면 되겠습니다.
+         <div class="left">
+                <div class="inner"><img src="./img/1.jpg" alt="pic"></div>
         */
+        
+        const $btn3 = document.querySelector('#btn3');
+        const $img = document.querySelector('img');
+        const $lInner = document.querySelector('inner > img');
 
+        $btn3.addEventListener('click' , e => {
+            $img.classList.toggle('memo');
+            if ($img.classList.contains('mamo')) {
+                $btn3.textContent = '사진모드'
+                const $textarea = document.createElement('textarea');
+                $textarea.className = 'memo';
+                const $regBtn = document.createElement('button');
+                $regBtn.textContent = '등록하기';
+            } else {
+                
+                $btn3.textContent = '메모장모드'
+            }
+        })
 
 
     </script>
