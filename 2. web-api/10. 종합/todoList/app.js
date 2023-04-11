@@ -7,8 +7,8 @@ const $list = document.querySelector('#list');
 $plusbtn.onclick = function(e) {
     //입력값이 없는 경우
     if($todoInput.value =='') { 
-        alert('필수 입력사항입니다!');
-        $todoInput.classList.toggle('주황으로배경색바뀜');
+        $todoInput.setAttribute('placeholder', '필수 입력사항입니다!');
+        $todoInput.classList.toggle('orange');
         return;
     }
     //입력값 있는 경우
