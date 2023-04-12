@@ -32,6 +32,9 @@ function randomCard(){
 
     while (rCard.includes(random)) {
         random = Math.floor(Math.random() * 40) + 1;
+        if (random == 0) {
+            random = Math.floor(Math.random() * 40) + 1;
+        }
     }
 
     rCard.push(random);
@@ -91,13 +94,13 @@ let $youPoint = document.querySelector('#youCard-sum > h3');
 let flag = false;
 // 셔플 진행!!
 $shuffleBtn.addEventListener('click', e => {
-    $betting.style.display = 'none';
     if (gameData.myBetting === 0) {
-        alert('너의 배팅금이 잘못된거같애')
+        alert('베팅을 하지 않았습니다.')
         return;
     } else if (flag) {
         return;
     }
+    $betting.style.display = 'none';
 
     gameData.myCard += (+randomCard());
     console.log(cardNum); 
@@ -159,13 +162,13 @@ $standBtn.addEventListener('click', e => {
         $youPoint.textContent = gameData.dealCard
         if (gameData.dealCard >= 17) {
             
-            // if(gameData.dealCard > 21 || gameData.dealCard < gameData.myCard) {
-            //     alert('플레이어 승리!')
-            // } else if (gameData.dealCard > gameData.myCard) {
-            //     alert('딜러 승리!')
-            // } else if (gameData.dealCard === gameData.myCard) {
-            //     alert('비겼음')
-            // }
+            if(gameData.dealCard > 21 || gameData.dealCard < gameData.myCard) {
+                alert('플레이어 승리!')
+            } else if (gameData.dealCard > gameData.myCard) {
+                alert('딜러 승리!')
+            } else if (gameData.dealCard === gameData.myCard) {
+                alert('비겼음')
+            }
             return;
         }
     }
