@@ -22,7 +22,7 @@
             <div id="start-logo">
                 <img src="./img/Blackjack_logo.png" alt="메인로고">
             </div>
-            <div id="start-btn" class="main-btn">시작</div>
+            <div id="start-btn">시작</div>
         </div>
         
         <div id="gameOn">
@@ -33,7 +33,7 @@
                         <em id="shuffle">셔플을 시작할까요?</em>
                         <input id="shuffleBtn" type="button" value="셔플 진행!!">
                     </h2>
-                    <div id="numbers"></div>
+                    <div id="cards"></div>
                 </article>
                 <!-- 배팅란 -->
                 <div id="betting">
@@ -49,7 +49,10 @@
                 </div>
                 <!-- 배팅 금액 확인란 -->
                 <div id="betting-text">
-                    배팅 금액: $<span id="betting-text-money"> 0</span>
+                    배팅 금액: $<span id="betting-text-money">0</span>
+                </div>
+                <div id="pocket-text">
+                    소지금: $<span id="pocket-text-money">500</span>
                 </div>
             </section>
 
@@ -63,15 +66,15 @@
                     </div>
                     <!-- 카드 합계 -->
                     <div id="card-sum">
-                        <div id="myCard-sum">
+                        <div id="youCard-sum">
                             <h3>0</h3>
                         </div>
-                        <div id="youCard-sum">
+                        <div id="myCard-sum">
                             <h3>0</h3>
                         </div>
                     </div>
                     <div id="player">
-                        <ul>
+                        <ul id="player-card">
 
                         </ul>
                     </div>
